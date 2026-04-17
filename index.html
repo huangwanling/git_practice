@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人自我介紹 | Portfolio</title>
+    <style>
+        /* CSS 樣式設定 */
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --bg-color: #f5f6fa;
+            --text-color: #2d3436;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* 導覽列 */
+        header {
+            background: white;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* 主視覺區塊 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* 內容區塊通用樣式 */
+        section {
+            padding: 80px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--accent-color);
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* 關於我與技能 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* 頁尾 */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* 手機版優化 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; }
+            nav ul { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#contact">聯絡我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>你好，我是 [你的姓名]</h1>
+        <p>熱愛技術分享與網頁開發的工程師</p>
+    </section>
+
+    <section id="about">
+        <h2>關於我</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>我的背景</h3>
+                <p>在這裡寫下你的成長背景或是目前的職位。例如：我是一名擁有三年經驗的前端開發者，致力於創造優質的使用者體驗。</p>
+            </div>
+            <div class="card">
+                <h3>個人願景</h3>
+                <p>描述你對未來的目標，或是你對某項技術的熱情。不斷學習、挑戰自我是我的座右銘。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>核心技能</h2>
+        <div class="content-grid" style="text-align: center;">
+            <div class="card">
+                <h1 style="color:var(--accent-color)">HTML/CSS</h1>
+                <p>精通響應式版面佈局</p>
+            </div>
+            <div class="card">
+                <h1 style="color:var(--accent-color)">JavaScript</h1>
+                <p>擅長邏輯處理與動態效果</p>
+            </div>
+            <div class="card">
+                <h1 style="color:var(--accent-color)">UI Design</h1>
+                <p>簡約美觀的介面設計</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center;">
+        <h2>聯絡我</h2>
+        <p>對我的作品有興趣嗎？歡迎透過郵件與我聯繫！</p>
+        <p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem;">Email: <a href="mailto:yourname@example.com" style="color: var(--accent-color);">yourname@example.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [你的姓名] 版權所有</p>
+    </footer>
+
+</body>
+</html>
